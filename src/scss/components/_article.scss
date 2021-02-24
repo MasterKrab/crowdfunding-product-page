@@ -1,5 +1,112 @@
+@use "../variables/colors" as c;
+
 .article{
    width: 90%;
-   background-color: #fff;
    margin: 180px auto;
+
+   &--active{
+      margin-top: 250px;
+   }
+
+   @media screen and (min-width: 768px){
+      margin-top: 200px;
+      width: 70%;
+   }
+
+   &__header{
+      background-color: #fff;
+      border: 1px solid lighten(c.$dark-gray, 45%);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      position: relative;
+      padding-top: 50px;
+      text-align: center;
+
+      &::after{
+         content: url(../assets/img/logo-mastercraft.svg);
+         width: 50px;
+         height: 50px;
+         position: absolute;
+         top: -25px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+   
+   &__title{
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      @media screen and (max-width: 768px){
+         padding-left: 1rem;
+         padding-right: 1rem;
+      }
+
+      @media screen and (min-width: 768px){
+         font-size: 1.8rem;
+      }
+   }
+
+   &__subtitle{
+      color: c.$dark-gray;
+      opacity: 0.5;
+      font-size: 0.8rem;
+
+      @media screen and (min-width: 768px){
+         font-size: 1rem;
+      }
+   }
+
+   &__buttons{
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__back-button{
+      display: grid;
+      place-items: center;
+      height: 60px;
+      width: 75%;
+      max-width: 230px;
+      border-radius: 2rem;
+      background-color: c.$moderate-cyan;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+   }
+}
+
+.bookmarks{
+   display: flex;
+   align-items: center;
+   color: c.$dark-gray;
+   text-decoration: none;
+   font-weight: 700;
+
+   @media screen and (min-width: 768px){
+      background-color: c.$gray;
+      border-radius: 2rem;
+      width: 180px;
+   }
+   
+
+   &__icon{
+      background-image: url(../assets/img/icon-bookmark.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+   }
+
+   &__text{
+
+      margin-left: 15px;
+
+      @media screen and (max-width: 768px){
+         display: none;
+      }
+   }
 }

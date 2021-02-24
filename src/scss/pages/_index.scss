@@ -1,4 +1,5 @@
 html{
+   background-color: #fafafa;
    background-image: url(../assets/img/image-hero-mobile.jpg);
    background-size: 100%;
    background-repeat: no-repeat;
@@ -15,8 +16,17 @@ body{
    min-height: 100vh;
 }
 
-.no-scroll{
-   height: 100%;
-   overflow: hidden;
-   background-color: rgba(0,0,0,0.5);
+@media screen and (max-width: 768px){
+   .no-scroll{
+      height: 100vh;
+      overflow: hidden;
+   }
+}
+
+
+.body{
+   margin: 0 auto;
+   max-width: 1440px;
+   font-family: 'Basis grotesque pro', sans-serif;
+   color: #0d193f;
 }

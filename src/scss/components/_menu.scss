@@ -10,6 +10,20 @@
       flex-direction: row;
       justify-content: space-between;
    }
+   
+   @media screen and (max-width: 768px){
+      &--active{
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 10;
+         width: 100vw;
+         height: 100%;
+         overflow: hidden;
+         background-color: rgba(0,0,0,0.5);
+      }
+
+   }
 }
 
 .top-bar{
@@ -33,7 +47,6 @@
    
    &__icon-menu{
       cursor: pointer;
-      margin-left: auto;
       width: ms.$width;
       height:  ms.$height;
       background-image: url(../../assets/img/icon-hamburger.svg);
@@ -51,9 +64,12 @@
    list-style: none;
    display: none;
 
-   &--show{
-      display: block;
-      background-color: #fff;
+   @media screen and (max-width: 768px){
+      &--active{
+         animation: show 1s 1;
+         display: block;
+         background-color: #fff;
+      }
    }
    
    @media screen and (min-width: 768px){
@@ -91,4 +107,15 @@
          color: #fff;
       }
    }
+}
+
+
+@keyframes show {
+   0%{
+      opacity: 0;
+   }
+   100%{
+      opacity: 1;
+   }
+
 }

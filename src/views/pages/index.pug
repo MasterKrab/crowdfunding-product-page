@@ -32,7 +32,7 @@ html(lang="en")
       //- CSS
       link(rel="stylesheet", href="css/styles.css")
    body
-      header.main-header
+      header.main-header#header
          .top-bar
             img.top-bar__logo(src="assets/img/logo.svg", alt="crowfound logo")
             .top-bar__icon-menu#menu-button
@@ -44,15 +44,15 @@ html(lang="en")
                   a.menu__link(href="#") Discover
                li.menu__item 
                   a.menu__link(href="#") Get Started
-      article.article 
+      article.article#article
          header.article__header
             h1.article__title Mastercraft Bamboo Monitor Riser
             h2.article__subtitle A beautiful & handcrafted monitor stand to reduce neck and eye strain.
             .article__buttons
-               a(href="#") Back this project
+               a(href="#").article__back-button Back this project
                   a.bookmarks(href="#") 
-                     span.bookmark__icon
-                     span.bookmark__text Bookmark
+                     span.bookmarks__icon
+                     span.bookmarks__text Bookmark
          .collected
             ul.collected__list 
                li.collected__item 
