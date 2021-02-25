@@ -36,6 +36,7 @@ html(lang="en")
          .top-bar
             img.top-bar__logo(src="assets/img/logo.svg", alt="crowfound logo")
             .top-bar__icon-menu#menu-button
+         .background-menu#bg-menu
          nav.main-header__nav
             ul.menu#menu
                li.menu__item 
@@ -70,27 +71,33 @@ html(lang="en")
             p.about__text The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
             p.about__text Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.
             article.card 
-               h4.card__title Bamboo Stand
-               h5.card__subtitle Pledge $25 or more
+               header.card__header
+                  h4.card__title Bamboo Stand
+                  h5.card__subtitle Pledge $25 or more
                p.card__text You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
-               p.card__days 
-                  span.card__number-days 101 
-                  span.card__number-left left
-               a.card__link(href="#") Select Reward 
+               footer.card__footer 
+                  p.card__days 
+                     span.card__number-days 101 
+                     span.card__number-left left
+                  a.card__link(href="#") Select Reward 
             article.card 
-               h4.card__title Black Edition Stand
-               h5.card__subtitle Pledge $75 or more
+               header.card__header
+                  h4.card__title Black Edition Stand
+                  h5.card__subtitle Pledge $75 or more
                p.card__text You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-               p.card__days 
-                  span.card__number-days 64  
-                  span.card__number-left left
-               a.card__link(href="#") Select Reward 
+               footer.card__footer
+                  p.card__days 
+                     span.card__number-days 64  
+                     span.card__number-left left
+                  a.card__link(href="#") Select Reward 
             article.card.card--off 
-               h4.card__title Mahogany Special Edition
-               h5.card__subtitle Pledge $200 or more
+               header.card__header
+                  h4.card__title Mahogany Special Edition
+                  h5.card__subtitle Pledge $200 or more
                p.card__text You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
-               p.card__days 
-                  span.card__number-days 0 
-                  span.card__number-left left
-               a.card__link.card__link--off(href="#") Out of Stock
+               footer.card__footer
+                  p.card__days 
+                     span.card__number-days 0 
+                     span.card__number-left left
+                  a.card__link.card__link--off(href="#") Out of Stock
       script(src="js/scripts-min.js") 
