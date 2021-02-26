@@ -22,14 +22,14 @@ article.addEventListener("click", e =>{
    }
 
    if(e.target.classList.contains("card__button") && !e.target.classList.contains("card__button--off")){
-      document.querySelector(`.modal-card__checkbox[data-id="${e.target.dataset.id}"]`).checked = true
+      document.querySelector(`.modal-card__checkbox[data-id="${e.target.dataset.id}"]`).checked = true;
 
       document.querySelectorAll(".modal-card__selected").forEach(item => {
          item.classList.remove("modal-card__selected--show");
 
             if(e.target.dataset.id === item.dataset.id){
                item.classList.toggle("modal-card__selected--show");
-            }
+            };
       });
    }
 });
@@ -55,13 +55,15 @@ modal.addEventListener("click", e =>{
    };
 
    if(e.target.classList.contains("modal-card__submit")){
-      e.preventDefault();
-      collected += parseFloat(e.target.previousElementSibling.firstElementChild.value);
-      backers++;
-      updateCollected();
-      toggleModal();
-      toggleModalCompleted();
+      if(e.target.previousElementSibling.firstElementChild.validity.valid){
+         e.preventDefault();
+         collected += parseFloat(e.target.previousElementSibling.firstElementChild.value);
+         backers++;
+         updateCollected();
+         toggleModal();
+         toggleModalCompleted();
+      }
    }     
 });
 
-modalCompleted.addEventListener("click", toggleModalCompleted)
+modalCompleted.addEventListener("click", toggleModalCompleted);

@@ -6,11 +6,11 @@ const updateCollected = () =>{
 }
 
 const toggleModal = () =>{
-   modalBg.classList.toggle("modal-bg--show")
-   modal.classList.toggle("modal--show")
-}
+   modalBg.classList.toggle("modal-bg--show");
+   modal.classList.toggle("modal--show");
+};
 
 const toggleModalCompleted = () =>{
-   modalBg.classList.toggle("modal-bg--show")
-   modalCompleted.classList.toggle("modal-completed--show")
-}
+   modalBg.classList.toggle("modal-bg--show");
+   modalCompleted.classList.toggle("modal-completed--show");
+};
