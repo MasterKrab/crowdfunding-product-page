@@ -16,6 +16,9 @@ const toggleModalCompleted = e =>{
    scrollElement(document.body)
 };
 
-const uncheckCheckbox = () => document.querySelectorAll(".modal-card__checkbox").forEach(item =>item.checked = false);
+const uncheckSelects = () => {
+      document.querySelectorAll(".modal-card__checkbox").forEach(item =>item.checked = false);
+      document.querySelectorAll(".modal-card__selected").forEach(item => item.classList.remove("modal-card__selected--show"));
+};
 
 const scrollElement = element => window.scroll(0, (element.offsetTop - 100));

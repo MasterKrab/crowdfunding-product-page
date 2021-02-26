@@ -42,17 +42,14 @@ modal.addEventListener("click", e =>{
    
    if(e.target.classList.contains("modal__close-button")){
       toggleModal();
-      uncheckCheckbox();
-
-      document.querySelectorAll(".modal-card__selected").forEach(item => item.classList.remove("modal-card__selected--show"));
+      uncheckSelects();
    }
 
    if(e.target.classList.contains("modal-card__checkbox")){
 
-      uncheckCheckbox()
+      uncheckSelects();
 
       document.querySelectorAll(".modal-card__selected").forEach(item => {
-         item.classList.remove("modal-card__selected--show");
 
             if(e.target.dataset.id === item.dataset.id){
                item.classList.toggle("modal-card__selected--show");
@@ -70,6 +67,7 @@ modal.addEventListener("click", e =>{
          toggleModal();
          toggleModalCompleted();
          scrollElement(modalCompleted);
+         uncheckSelects();
       }
    }     
 });
