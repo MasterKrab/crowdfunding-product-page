@@ -77,14 +77,12 @@
       background-color: c.$gray;
       position: relative;
       overflow: hidden;
-      
-      &::after{
-         content: "";
-         border-radius: 2rem;
-         position: absolute;
-         background-color: c.$moderate-cyan;
-         height: 100%;
-         width: 80%;
-      }
+   }
+
+   &__progress{
+      border-radius: 2rem;
+      position: absolute;
+      background-color: c.$moderate-cyan;
+      height: 100%;
    }
 }

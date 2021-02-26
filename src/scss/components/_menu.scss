@@ -114,31 +114,22 @@
    }
 }
 
-.background-menu{
-   @media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
+   .background-menu{
       position: fixed;
-   top: 0;
-   left: 0;
-   z-index: 10;
-   width: 100vw;
-   height: 100%;
-   overflow: hidden;
-   background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-   display: none;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100vw;
+      height: 100%;
+      overflow: hidden;
+      background-image: linear-gradient(rgba(#000,0.7), rgba(#000,0.3));
+      display: none;
 
-   &--active{
-      display: block;
-   }
+      &--active{
+         display: block;
+      }
    }
 }
 
 
-@keyframes show {
-   0%{
-      opacity: 0;
-   }
-   100%{
-      opacity: 1;
-   }
-
-}

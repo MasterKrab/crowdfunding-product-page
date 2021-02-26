@@ -101,6 +101,9 @@
       &--off{
          background-color: c.$dark-gray;
          cursor: not-allowed;
+         &:active{
+            background-color: c.$dark-gray;
+         }
       }
    }
 }

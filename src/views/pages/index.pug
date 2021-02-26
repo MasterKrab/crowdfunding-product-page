@@ -51,21 +51,22 @@ html(lang="en")
             h2.article__subtitle A beautiful & handcrafted monitor stand to reduce neck and eye strain.
             .article__buttons
                a(href="#").article__back-button Back this project
-                  a.bookmarks(href="#") 
-                     span.bookmarks__icon
-                     span.bookmarks__text Bookmark
+               a.bookmarks(href="#") 
+                  span.bookmarks__icon
+                  span.bookmarks__text Bookmark
          .collected
             ul.collected__list 
                li.collected__item 
-                  span.collected__number $89,914 
-                  span.collected__backed of $100,000 backed
+                  span.collected__number#collected 
+                  span.collected__backed#collected-total 
                li.collected__item 
-                  span.collected__number 5,007 
+                  span.collected__number#backers
                   span.collected__backed total backers
                li.collected__item 
                   span.collected__number 56 
                   span.collected__backed days left
             .collected__bar
+               span.collected__progress#progress
          section.about 
             h3.about__title About this project
             p.about__text The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.
@@ -100,4 +101,79 @@ html(lang="en")
                      span.card__number-days 0 
                      span.card__number-left left
                   a.card__link.card__link--off(href="#") Out of Stock
+      .modal-bg#modal-bg
+      article.modal#modal
+         h2.modal__title Back this project
+         h3.modal__subtitle Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+
+         form(action="#").modal-card 
+            .modal-card__main
+               .modal-card__inputs
+                  input.modal-card__checkbox(type="checkbox" id="no-reward-checkbox" name="no-reward", data-id="1")
+                  label.modal-card__label(for="no-reward-checkbox")
+                     span.modal-card__name Pledge with no reward
+               p.modal-card__text Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.
+            .modal-card__selected(data-id="1")
+               label.modal-card__number-label(for="no-reward-number") Enter your pledge
+               .modal-card__number-buttons
+                  span.modal-card__number-name
+                     input.modal-card__number-input(type="number" name="number" id="no-reward-number" value="25" min="25" required)
+                  button.modal-card__submit(type="submit") Continue
+         form(action="#").modal-card 
+            .modal-card__main
+               .modal-card__inputs
+                  input.modal-card__checkbox(type="checkbox", id="bamboo-checkbox", name="bamboo", data-id="2")
+                  label.modal-card__label(for="bamboo-checkbox")
+                     span.modal-card__name Bamboo Stand
+                     span.modal-card__pledge Pledge $25 or more
+               p.modal-card__text You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.
+               p.modal-card__days 
+                  span.modal-card__number-days 101 
+                  span.modal-card__number-left left
+            .modal-card__selected(data-id="2")
+               label.modal-card__number-label(for="bamboo-number") Enter your pledge
+               .modal-card__number-buttons
+                  span.modal-card__number-name
+                     input.modal-card__number-input(type="number", name="number", id="bamboo-number", value="25", min="25", required)
+                  button.modal-card__submit(type="submit") Continue
+         form(action="#").modal-card 
+            .modal-card__main
+               .modal-card__inputs
+                  input.modal-card__checkbox(type="checkbox", id="bamboo-checkbox", name="bamboo", datt-id="3")
+                  label.modal-card__label(for="bamboo-checkbox")
+                     span.modal-card__name Black Edition Stand
+                     span.modal-card__pledge Pledge $75 or more
+               p.modal-card__text You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.
+               p.modal-card__days 
+                  span.modal-card__number-days 64 
+                  span.modal-card__number-left left
+            .modal-card__selected(data-id="3")
+               label.modal-card__number-label(for="black-edition-number") Enter your pledge
+               .modal-card__number-buttons
+                  span.modal-card__number-name
+                     input.modal-card__number-input(type="number", name="number", id="black-edition-number", value="75", min="75", required)
+                  button.modal-card__submit(type="submit") Continue
+         form(action="#").modal-card.modal-card--off
+            .modal-card__main
+               .modal-card__inputs
+                  input.modal-card__checkbox(type="checkbox", id="bamboo-checkbox", name="bamboo", disabled, data-id="4")
+                  label.modal-card__label(for="bamboo-checkbox")
+                     span.modal-card__name Mahogany Special Edition
+                     span.modal-card__pledge Pledge $200 or more
+               p.modal-card__text You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be addedto our Backer member list. Shipping is included.
+               p.modal-card__days 
+                  span.modal-card__number-days 0
+                  span.modal-card__number-left left
+            .modal-card__selected(data-id="4")
+               label.modal-card__number-label(for="black-edition-number") Enter your pledge
+               .modal-card__number-buttons
+                  span.modal-card__number-name
+                     input.modal-card__number-input(type="number", name="number", id="black-edition-number", value="200", min="200", required, disabled)
+                  button.modal-card__submit(type="submit") Continue
+         .modal__close-button
+      article.modal-completed#modal-completed
+         .modal-completed__image 
+         h2.modal-completed__title Thanks for your support!
+         p.modal-completed__text Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
+         a.modal-completed__button(href="#") Got it! 
       script(src="js/scripts-min.js") 

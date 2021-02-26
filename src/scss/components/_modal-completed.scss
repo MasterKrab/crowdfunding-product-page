@@ -1,0 +1,65 @@
+@use "../variables/colors" as c;
+
+.modal-completed{
+   position: absolute;
+   top: 400px;
+   left: 50%;
+   z-index: 1000;
+   background-color: #fff;
+   width: 90%;
+   max-width: 600px;
+   height: 500px;
+   transform: translateX(-50%);
+   border-radius: 0.5rem;
+   padding: 3rem;
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   text-align: center;
+
+   &--show{
+      display: flex;
+      transform: translateX(-50%);
+      animation: show 1s 1;
+   }
+
+   @media screen and (min-width: 768px){
+      &__title{
+         font-size: 2rem;
+      }
+   }
+
+   &__image{
+      padding: 1rem;
+      width: 80px;
+      height: 80px;
+      background-image: url(../assets/img/icon-check.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+   }  
+
+   &__text{
+      color: darken(c.$gray, 25%);
+      font-weight: 500;
+      line-height: 1.5;
+
+      @media screen and (min-width: 768px){
+         font-size: 1.3rem;
+      }
+   }
+
+   &__button{
+      background-color: c.$moderate-cyan;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      padding: 1rem 1.5rem; 
+      border-radius: 2rem;
+      color: #fff;
+
+      &:active{
+         background-color: c.$dark-cyan;
+      }
+   }
+}
+

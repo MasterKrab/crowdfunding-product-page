@@ -1,0 +1,270 @@
+@use "../variables/colors" as c;
+
+.modal-bg{
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(#000, 0.5);
+   place-items: center;
+   display: none;
+
+   &--show{
+      display: grid;
+      animation: show 1s 1;
+   }
+}
+
+
+.modal{
+   position: absolute;
+   top: 100px;
+   left: 50%;
+   z-index: 1000;
+   background-color: #fff;
+   width: 90%;
+   max-width: 770px;
+   transform: translateX(-50%);
+   border-radius: 0.5rem;
+   padding: 2rem;
+   display: none;
+
+   &--show{
+      display: block;
+      transform: translateX(-50%);
+      animation: show 1s 1;
+   }
+
+   &__subtitle{
+      color: darken(c.$gray, 25%);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+   }
+
+   &__close-button{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-image: url(../assets/img/icon-close-modal.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+   }
+}
+
+.modal-card{
+   border: 1px solid darken(c.$gray, 10%);
+   border-radius: 0.5rem;
+   margin-bottom: 40px;
+
+   
+
+   &--off{   
+      opacity: 0.5;
+      user-select: none;
+      cursor: not-allowed;
+   }
+
+   &__main{
+      padding: 2rem 1.6rem;
+
+      @media screen and (min-width: 768px){
+         display: grid;
+         grid-template-columns: 2fr 1fr;
+      }
+   }
+
+   &__inputs{
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      
+      @media screen and (min-width: 768px){
+         grid-column: 1 / 2;
+      }
+   }
+
+   &__checkbox{
+      border: 1px solid darken(c.$gray, 10%);
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 1rem;
+      position: relative;
+      display: grid;
+      place-items: center;
+
+      &:checked::after{
+         content: "";
+         position: absolute;
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+         background-color: c.$moderate-cyan;
+      }
+   }
+
+   &__label{
+      display: flex;
+      flex-direction: column;
+      
+      @media screen and (min-width: 768px){
+         flex-direction: row;
+         align-items:center;
+      }
+   }
+
+   &__name{
+      line-height: 2;
+      font-weight: 700;
+   }
+
+   &__pledge{
+      color: c.$moderate-cyan;
+
+      @media screen and (min-width: 768px){
+         padding-left: 15px;
+      }
+   }
+
+   &__text{
+      color: darken(c.$gray, 25%);
+      font-weight: 500;
+      line-height: 1.5;
+   }
+
+
+   &__text{
+      color: darken(c.$gray, 25%);
+      font-weight: 500;
+      line-height: 2;
+      margin: 0;
+      
+      @media screen and (min-width: 768px){
+         margin-left: 2rem;
+         grid-row: 2 / 3;
+         grid-column: span 2;
+         line-height: 1.5;
+         font-size: 1.1rem;
+      }
+   }
+
+   &__days{
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      @media screen and (min-width: 768px){
+         grid-column: 2 / 3;
+         margin-left: auto;
+         margin-bottom: auto;
+      }
+   }
+   
+   &__number-days{
+      font-weight: 700;
+      font-size: 2rem;
+      padding: 1rem 0;
+      
+      @media screen and (min-width: 768px){
+         font-size: 1.5rem;
+         padding: 0;
+      }
+   }
+
+   &__number-left{
+      color: darken(c.$gray, 25%);
+      padding-left: 7px;
+      font-weight: 400;
+   }
+
+   &__selected{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid darken(c.$gray, 25%);
+      padding-bottom: 2rem;
+      display: none;
+
+      &--show{
+         display: flex;
+      }
+
+      
+      @media screen and (min-width: 768px){
+         grid-column: span 2;
+         flex-direction: row;
+         justify-content: space-between;
+         padding: 1.5rem 1rem;
+      }
+   }
+
+   &__number-buttons{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media screen and (min-width: 380px){
+         flex-direction: row;
+         justify-content: center;
+         gap: 10px;
+      }
+   }
+
+   &__number-label{
+      color: darken(c.$gray, 25%);
+      padding: 1rem;
+   }
+
+   &__number-name{
+      position: relative;
+
+      @media screen and (max-width: 380px){
+         margin-bottom: 10px;
+      }
+
+      &::after{
+         content:"$";
+         color: darken(c.$gray, 25%);
+         position: absolute;
+         top: 16px;
+         left: 20px;
+      }
+   }
+
+   &__number-input{
+      border: 1px solid darken(c.$gray, 25%);
+      font-weight: 700;
+      border-radius: 2rem;
+      padding: 1rem 1rem 1rem 2.5rem;
+      width: 100px;
+      height: 50px;
+      transition: box-shadow 0.5s;
+
+      &:focus{
+         outline: none;
+         border-color: c.$moderate-cyan;
+         box-shadow: 0 0 5px 2px rgba(c.$moderate-cyan, 0.5);
+      }
+   }
+
+   &__submit{
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem 2rem;
+      text-align: center;
+      background-color: c.$moderate-cyan;
+      color: #fff;
+      transition: background-color 0.2s;
+
+      &:active{
+         background-color: c.$dark-cyan;
+      }
+   }
+}
