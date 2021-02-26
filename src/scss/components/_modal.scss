@@ -262,6 +262,7 @@
       background-color: c.$moderate-cyan;
       color: #fff;
       transition: background-color 0.2s;
+      cursor: pointer;
 
       &:active{
          background-color: c.$dark-cyan;

@@ -10,7 +10,12 @@ const toggleModal = () =>{
    modal.classList.toggle("modal--show");
 };
 
-const toggleModalCompleted = () =>{
+const toggleModalCompleted = e =>{
    modalBg.classList.toggle("modal-bg--show");
    modalCompleted.classList.toggle("modal-completed--show");
+   scrollElement(document.body)
 };
+
+const uncheckCheckbox = () => document.querySelectorAll(".modal-card__checkbox").forEach(item =>item.checked = false);
+
+const scrollElement = element => window.scroll(0, (element.offsetTop - 100));

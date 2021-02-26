@@ -18,8 +18,11 @@ article.addEventListener("click", e =>{
    };
 
    if(e.target.classList.contains("article__back-button") || e.target.classList.contains("card__button")){
-      !e.target.classList.contains("card__button--off") && toggleModal()
-   }
+      if(!e.target.classList.contains("card__button--off")){
+         toggleModal();
+         scrollElement(modal);
+      };
+   };
 
    if(e.target.classList.contains("card__button") && !e.target.classList.contains("card__button--off")){
       document.querySelector(`.modal-card__checkbox[data-id="${e.target.dataset.id}"]`).checked = true;
@@ -29,6 +32,7 @@ article.addEventListener("click", e =>{
 
             if(e.target.dataset.id === item.dataset.id){
                item.classList.toggle("modal-card__selected--show");
+               scrollElement(item);
             };
       });
    }
@@ -36,13 +40,16 @@ article.addEventListener("click", e =>{
 
 modal.addEventListener("click", e =>{
    
-   e.target.classList.contains("modal__close-button") && toggleModal();
+   if(e.target.classList.contains("modal__close-button")){
+      toggleModal();
+      uncheckCheckbox();
+
+      document.querySelectorAll(".modal-card__selected").forEach(item => item.classList.remove("modal-card__selected--show"));
+   }
 
    if(e.target.classList.contains("modal-card__checkbox")){
 
-      document.querySelectorAll(".modal-card__checkbox").forEach(item =>{
-         item.checked = false;
-      })
+      uncheckCheckbox()
 
       document.querySelectorAll(".modal-card__selected").forEach(item => {
          item.classList.remove("modal-card__selected--show");
@@ -62,8 +69,9 @@ modal.addEventListener("click", e =>{
          updateCollected();
          toggleModal();
          toggleModalCompleted();
+         scrollElement(modalCompleted);
       }
    }     
 });
 
-modalCompleted.addEventListener("click", toggleModalCompleted);
+modalCompleted.addEventListener("click", e => e.target.classList.contains("modal-completed__button") && toggleModalCompleted(e));
