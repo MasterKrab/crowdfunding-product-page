@@ -21,4 +21,4 @@ const uncheckSelects = () => {
       document.querySelectorAll(".modal-card__selected").forEach(item => item.classList.remove("modal-card__selected--show"));
 };
 
-const scrollElement = element => window.scroll(0, (element.offsetTop - 100));
+const scrollElement = element => element.scrollIntoView({block: "center"});

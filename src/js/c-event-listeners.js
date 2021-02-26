@@ -20,7 +20,7 @@ article.addEventListener("click", e =>{
    if(e.target.classList.contains("article__back-button") || e.target.classList.contains("card__button")){
       if(!e.target.classList.contains("card__button--off")){
          toggleModal();
-         scrollElement(modal);
+         modal.scrollIntoView();
       };
    };
 
