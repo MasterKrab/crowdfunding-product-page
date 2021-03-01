@@ -32,7 +32,7 @@ article.addEventListener("click", e =>{
 
             if(e.target.dataset.id === item.dataset.id){
                item.classList.toggle("modal-card__selected--show");
-               scrollElement(item);
+               window.scrollTo({top: item.offsetTop - 300});
             };
       });
    }
